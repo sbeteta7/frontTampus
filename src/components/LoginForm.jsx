@@ -97,7 +97,7 @@ const LoginForm = () => {
                     <div class="mb-12 md:mb-0 md:w-8/12 lg:w-6/12">
                         <img
                         src={Logo}
-                        class="w-full"
+                        class="w-full rounded-full"
                         alt="Phone image" />
                     </div>
 
