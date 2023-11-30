@@ -1,5 +1,7 @@
+import Logo from '../img/Logo.png';
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import Header from './Header';
 
 const RegisterForm = () => {
     const navigate = useNavigate();
@@ -79,15 +81,19 @@ const RegisterForm = () => {
 
     return (
         <section className="min-h-screen bg-[#f5e5c2]">
-            <div className="container h-full pl-16 py-24">
+            <Header />
+            <div className="container h-full pl-16">
                 <div className="g-6 flex h-full flex-wrap items-center justify-center lg:justify-between pt-14">
-                    <div className="mb-12 md:mb-0 md:w-8/12 lg:w-6/12">
-                        {/* Your logo here */}
+                    <div class="mb-12 md:mb-10 md:w-8/12 lg:w-6/12">
+                        <img
+                        src={Logo}
+                        class="w-full rounded-full"
+                        alt="Phone image" />
                     </div>
 
                     <div className="md:w-8/12 lg:ml-6 lg:w-5/12 ">
                         <form onSubmit={handleSubmit}>
-                            <div className="text-4xl font-mono text-center mb-7">Registro</div>
+                            <div className="text-4xl font-mono text-center mb-7 md:mt-10">Registro</div>
                             <div className="relative mb-6">
                                 <p className="mb-3">First Name</p>
                                 <input
