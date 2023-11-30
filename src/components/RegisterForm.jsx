@@ -1,10 +1,9 @@
 import Logo from '../img/Logo.png';
 import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link} from 'react-router-dom';
 import Header from './Header';
 
 const RegisterForm = () => {
-    const navigate = useNavigate();
 
     const [formData, setFormData] = useState({
         firstName: '',
@@ -14,85 +13,21 @@ const RegisterForm = () => {
         confirmPassword: '',
     });
 
-    const [formErrors, setFormErrors] = useState({
-        firstName: '',
-        lastName: '',
-        email: '',
-        password: '',
-        confirmPassword: '',
-    });
-
-    const handleChange = (e) => {
-        const { name, value } = e.target;
-        setFormData({
-            ...formData,
-            [name]: value,
-        });
-        setFormErrors({
-            ...formErrors,
-            [name]: '', // Limpiar el mensaje de error cuando se realiza un cambio en el campo
-        });
-    };
-
-    const validateEmail = (email) => {
-        // Puedes usar una expresión regular para validar el formato del email
-        const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        return regex.test(email);
-    };
-
-    const handleSubmit = (e) => {
-        e.preventDefault();
-
-        // Verificar que todos los campos estén llenos
-        for (const key in formData) {
-            if (formData[key].trim() === '') {
-                setFormErrors((prevErrors) => ({
-                    ...prevErrors,
-                    [key]: `${key.charAt(0).toUpperCase() + key.slice(1)} is required.`,
-                }));
-                return;
-            }
-        }
-
-        // Verificar el formato de email
-        if (!validateEmail(formData.email)) {
-            setFormErrors((prevErrors) => ({
-                ...prevErrors,
-                email: 'Invalid email format.',
-            }));
-            return;
-        }
-
-        // Validar si la contraseña y la confirmación de contraseña coinciden
-        if (formData.password !== formData.confirmPassword) {
-            setFormErrors((prevErrors) => ({
-                ...prevErrors,
-                confirmPassword: 'Passwords do not match.',
-            }));
-            return;
-        }
-
-        // Aquí puedes agregar la lógica de registro
-        // setUser({ ...user, ...formData });
-
-        // Navegar a la página deseada después del registro
-        navigate('/Navegar');
-    };
-
     return (
         <section className="min-h-screen bg-[#f5e5c2]">
             <Header />
             <div className="container h-full pl-16">
                 <div className="g-6 flex h-full flex-wrap items-center justify-center lg:justify-between pt-14">
-                    <div class="mb-12 md:mb-10 md:w-8/12 lg:w-6/12">
+                    <div className="mb-12 md:mb-10 md:w-8/12 lg:w-6/12">
                         <img
-                        src={Logo}
-                        class="w-full rounded-full"
-                        alt="Phone image" />
+                            src={Logo}
+                            className="w-full rounded-full"
+                            alt="Phone image"
+                        />
                     </div>
 
                     <div className="md:w-8/12 lg:ml-6 lg:w-5/12 ">
-                        <form onSubmit={handleSubmit}>
+                        <form>
                             <div className="text-4xl font-mono text-center mb-7 md:mt-10">Registro</div>
                             <div className="relative mb-6">
                                 <p className="mb-3">First Name</p>
@@ -100,7 +35,6 @@ const RegisterForm = () => {
                                     type="text"
                                     name="firstName"
                                     value={formData.firstName}
-                                    onChange={handleChange}
                                     className="peer block min-h-[auto] w-full rounded bg-white px-3 py-[0.32rem] leading-[2.15] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100"
                                     placeholder="First Name"
                                 />
@@ -112,7 +46,6 @@ const RegisterForm = () => {
                                     type="text"
                                     name="lastName"
                                     value={formData.lastName}
-                                    onChange={handleChange}
                                     className="peer block min-h-[auto] w-full rounded bg-white px-3 py-[0.32rem] leading-[2.15] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100"
                                     placeholder="Last Name"
                                 />
@@ -124,7 +57,6 @@ const RegisterForm = () => {
                                     type="text"
                                     name="email"
                                     value={formData.email}
-                                    onChange={handleChange}
                                     className="peer block min-h-[auto] w-full rounded bg-white px-3 py-[0.32rem] leading-[2.15] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100"
                                     placeholder="Email address"
                                 />
@@ -136,7 +68,6 @@ const RegisterForm = () => {
                                     type="password"
                                     name="password"
                                     value={formData.password}
-                                    onChange={handleChange}
                                     className="peer block min-h-[auto] w-full rounded bg-white px-3 py-[0.32rem] leading-[2.15] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100"
                                     placeholder="Password"
                                 />
@@ -148,7 +79,6 @@ const RegisterForm = () => {
                                     type="password"
                                     name="confirmPassword"
                                     value={formData.confirmPassword}
-                                    onChange={handleChange}
                                     className="peer block min-h-[auto] w-full rounded bg-white px-3 py-[0.32rem] leading-[2.15] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100"
                                     placeholder="Confirm Password"
                                 />
@@ -177,4 +107,3 @@ const RegisterForm = () => {
 };
 
 export default RegisterForm;
-                        
