@@ -1,11 +1,11 @@
 import React from 'react'
-import Reservar from './components/Reservar'
+import Reser_IMG from './components/Reser_IMG'
 
 const Reservas = () => {
   return (
     <>
         <div>
-            <Reservar />
+            <Reser_IMG />
         </div>
     </>
   )
