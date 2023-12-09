@@ -1,13 +1,14 @@
 import React from 'react'
-import Reser_IMG from './components/Reser_IMG'
 import Header from './components/Header'
+import Resv_Cal from './components/Resv_Cal'
 
 const Reservas = () => {
   return (
     <>
         <div>
             <Header />
-            <Reser_IMG />
+            <p className='text-center font-semibold text-[30px] py-6'>Genera tu cita</p>
+            <Resv_Cal />
         </div>
     </>
   )
