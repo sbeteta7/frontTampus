@@ -26,15 +26,16 @@ function Resv_Cal() {
 
     return (
         <>
-            <div className='px-20'>
+            <div className='text-center'>
                 <p className='py-2 text-[20px] '>Seleccione el dia</p>
                 <Calendar 
                     date= {selectedDate} 
                     onChange={handleSelect}
+                    className='pb-5'
                 />
 
-                <p className="text-lg font-semibold mb-2">Fecha seleccionada:</p>
-                <div className='max-w-sm mx-auto bg-white rounded-lg border border-black shadow-md p-6 flex flex-col items-center transition-transform transform hover:scale-105'>
+                <p className="text-lg font-semibold mb-2 pb-6">Fecha seleccionada:</p>
+                <div className='w-28 mx-auto bg-white rounded-lg border border-black shadow-md p-6 flex flex-col items-center transition-transform transform hover:scale-105'>
                     <div className="flex flex-col space-y-2 text-center">
                         <p className="text-gray-700">{formattedDate.name}</p>
                         <p className="text-2xl font-bold">{formattedDate.day}</p>
