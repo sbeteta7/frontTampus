@@ -8,16 +8,16 @@ function Reser_IMG() {
                 <img className='w-full h-full object-cover' src="https://picsum.photos/1240/600" alt="/" />
             </div>
             <div>
-                <img className='w-full h-full object-cover' src="https://picsum.photos/1240/600" alt="/" />
+                <img className='w-full h-full object-cover' src="https://picsum.photos/800/600" alt="/" />
             </div>
             <div>
                 <img className='w-full h-full object-cover' src="https://picsum.photos/1240/600" alt="/" />
             </div>
             <div>
-                <img className='w-full h-full object-cover' src="https://picsum.photos/1240/600" alt="/" />
+                <img className='w-full h-full object-cover' src="https://picsum.photos/1080/800" alt="/" />
             </div>
             <div>
-                <img className='w-full h-full object-cover' src="https://picsum.photos/1240/600" alt="/" />
+                <img className='w-full h-full object-cover' src="https://picsum.photos/1920/1080" alt="/" />
             </div>
         </div>
     </div>
