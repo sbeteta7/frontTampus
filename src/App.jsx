@@ -14,12 +14,12 @@ function App() {
       <Router>
          <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/Navegar" element={<Navegar />} />
-          <Route path="/Login" element={<Login />} />
-          <Route path="/Register" element={<Register />} />
-          <Route path="/Publicar" element={<Publicar/>} />
-          <Route path="/Perfil" element={<Perfil/>} />
-          <Route path="/Reservas" element={<Reservas />} />
+          <Route path="/navegar" element={<Navegar />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/publicar" element={<Publicar/>} />
+          <Route path="/perfil" element={<Perfil/>} />
+          <Route path="/reservas" element={<Reservas />} />
         </Routes>
       </Router>
       </AuthProvider>
